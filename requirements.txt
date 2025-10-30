@@ -1,6 +1,0 @@
-sqlalchemy
-fastapi
-uvicorn
-coverage
-ruff
-pytest

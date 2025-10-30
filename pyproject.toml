@@ -23,4 +23,18 @@ dev = [
   "pytest",
   "ruff",
   "httpx",
+  "mock",
 ]
+
+[tool.pytest.ini_options]
+testpaths = [
+    "test",
+]
+
+[tool.coverage.report]
+fail_under = 80
+
+[tool.coverage.run]
+branch = true
+include = ["fastapi_backend/*"]
+command_line = "-m pytest"
