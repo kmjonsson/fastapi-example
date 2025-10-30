@@ -8,6 +8,10 @@ from api import api
 
 api = api('items')
 
+@api.get("/")
+async def list_item_endpoint(db: Session = Depends(db)) -> list[Item]:
+    return [i.to_item() for i in CrudItem(db).list()]
+
 @api.post("/")
 async def create_item_endpoint(item : CreateItem, db: Session = Depends(db)) -> Item:
     return CrudItem(db).create(item).to_item()
@@ -20,8 +24,8 @@ async def get_item_endpoint(item_id: int, db: Session = Depends(db)) -> Item:
     return item.to_item()
 
 @api.put("/{item_id}")
-async def update_item_endpoint(item_id: int, name: str, description: str, price: int, db: Session = Depends(db)) -> Item:
-    item = CrudItem(db).update(item_id, name, description, price)
+async def update_item_endpoint(item_id: int, new_item: CreateItem, db: Session = Depends(db)) -> Item:
+    item = CrudItem(db).update(item_id, new_item)
     if item is None:
         raise HTTPException(status_code=404, detail="Item not found")
     
