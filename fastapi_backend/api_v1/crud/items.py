@@ -1,6 +1,7 @@
 from sqlalchemy.orm import Session
 from ..models.item import DatabaseItem, CreateItem
 
+
 class CrudItem:
     def __init__(self, db: Session):
         self.db = db
@@ -14,11 +15,11 @@ class CrudItem:
         self.db.commit()
         self.db.refresh(db_item)
         return db_item
-    
+
     def get(self, item_id: int) -> DatabaseItem:
         return self.db.query(DatabaseItem).filter(DatabaseItem.id == item_id).first()
 
-    def update(self, id: int, new_item:CreateItem) -> DatabaseItem:
+    def update(self, id: int, new_item: CreateItem) -> DatabaseItem:
         item = self.get(id)
         if item:
             item.name = new_item.name
@@ -27,7 +28,7 @@ class CrudItem:
             self.db.commit()
             self.db.refresh(item)
         return item
-    
+
     def delete(self, id: int) -> DatabaseItem:
         item = self.get(id)
         if item:

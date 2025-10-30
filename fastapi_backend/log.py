@@ -1,4 +1,3 @@
-
 import logging
 
 log = logging.getLogger("fast-api-backend")

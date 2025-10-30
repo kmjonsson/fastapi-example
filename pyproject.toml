@@ -2,10 +2,13 @@
 requires = ["hatchling >= 1.26"]
 build-backend = "hatchling.build"
 
+[tool.hatch.build.targets.wheel]
+packages = ["fastapi_backend"]
+
 [project]
-name = "fast-api-example"
+name = "fastapi_backend"
 version="0.0.0"
-description = "Basic fast-api example"
+description = "Basic fastapi example"
 requires-python = ">= 3.11"
 
 dependencies = [
@@ -19,4 +22,5 @@ dev = [
   "coverage",
   "pytest",
   "ruff",
+  "httpx",
 ]

@@ -1,6 +1,7 @@
 from sqlalchemy import Column, Integer, String
-from database import Base
+from fastapi_backend.database import Base
 from pydantic import BaseModel
+
 
 class Item(BaseModel):
     id: int
@@ -8,10 +9,12 @@ class Item(BaseModel):
     description: str
     price: int
 
+
 class CreateItem(BaseModel):
     name: str
     description: str
     price: int
+
 
 class DatabaseItem(Base):
     __tablename__ = "items"
@@ -22,9 +25,5 @@ class DatabaseItem(Base):
 
     def to_item(self):
         return Item(
-            id=self.id,
-            name=self.name,
-            description=self.description,
-            price=self.price
+            id=self.id, name=self.name, description=self.description, price=self.price
         )
-
