@@ -1,12 +1,10 @@
 """Tests for item creation and retrieval endpoints."""
 
 from fastapi.testclient import TestClient
-import os
 
 from fastapi_backend.database import db, Base
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine
-from fastapi_backend.api_v1 import init_models
 
 import pytest
 
