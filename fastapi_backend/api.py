@@ -3,6 +3,7 @@ from .log import log
 
 app = FastAPI()
 
+
 def api(base="", version=1):
     if base != "" and not base.startswith("/"):
         base = "/" + base
