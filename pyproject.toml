@@ -1,0 +1,22 @@
+[build-system]
+requires = ["hatchling >= 1.26"]
+build-backend = "hatchling.build"
+
+[project]
+name = "fast-api-example"
+version="0.0.0"
+description = "Basic fast-api example"
+requires-python = ">= 3.11"
+
+dependencies = [
+    "sqlalchemy",
+    "fastapi",
+    "uvicorn",
+]
+
+[project.optional-dependencies]
+dev = [
+  "coverage",
+  "pytest",
+  "ruff",
+]

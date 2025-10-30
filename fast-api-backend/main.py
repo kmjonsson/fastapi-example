@@ -1,4 +1,3 @@
-from database import engine
 
 from api import app
 
