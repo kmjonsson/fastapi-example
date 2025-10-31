@@ -1,5 +1,9 @@
 from .api import app
 
-from .api_v1 import init as api_v1_init
+from .models import init_models
 
-api_v1_init(app)
+from .api_v1 import init as init_api_v1
+
+init_api_v1(app)
+
+init_models()

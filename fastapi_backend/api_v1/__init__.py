@@ -1,7 +1,5 @@
-from .routers import items
-from .models import init_models
+from .items import router as items
 
 
 def init(app):
     app.include_router(items.api)
-    init_models()

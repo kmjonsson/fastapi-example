@@ -1,8 +1,8 @@
 from fastapi import Depends, HTTPException
 from sqlalchemy.orm import Session
 from fastapi_backend.database import db
-from ..models.item import CreateItem, Item
-from ..crud.items import CrudItem
+from .models import CreateItem, Item
+from .crud import CrudItem
 
 from fastapi_backend.api import api
 

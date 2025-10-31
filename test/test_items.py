@@ -8,6 +8,8 @@ from sqlalchemy import create_engine
 
 import pytest
 
+from fastapi_backend.main import app
+
 engine = create_engine("sqlite:///test.db")
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
@@ -27,8 +29,6 @@ async def _db():
     finally:
         new_db.close()
 
-
-from fastapi_backend.main import app
 
 app.dependency_overrides[db] = _db
 

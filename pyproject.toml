@@ -24,6 +24,7 @@ dev = [
   "ruff",
   "httpx",
   "mock",
+  "mypy",
 ]
 
 [tool.pytest.ini_options]

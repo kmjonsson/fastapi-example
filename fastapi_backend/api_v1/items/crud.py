@@ -1,5 +1,6 @@
 from sqlalchemy.orm import Session
-from ..models.item import DatabaseItem, CreateItem
+from .models import CreateItem
+from fastapi_backend.models.item import DatabaseItem
 
 
 class CrudItem:
