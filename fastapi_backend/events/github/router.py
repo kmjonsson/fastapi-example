@@ -1,10 +1,12 @@
-from fastapi_backend.models.github import GithubEvent
+from .models import GithubWebHook
 
 from fastapi import APIRouter
 
+from fastapi_backend.log import log
+
 api = APIRouter(prefix="/events/github")
 
-
 @api.post("/")
-async def events_github_endpoint(event: GithubEvent):
-    return {"detail": "GitHub event received"}
+async def github_event_endpoint(event: GithubWebHook) -> GithubWebHook:
+    log.info(f"Received GitHub event: {event.hook.events}")
+    return event
