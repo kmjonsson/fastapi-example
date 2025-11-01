@@ -4,9 +4,9 @@ from fastapi_backend.database import db
 from .models import CreateItem, Item
 from .crud import CrudItem
 
-from fastapi_backend.api import api
+from fastapi_backend.api import create as create_api
 
-api = api("items")
+api = create_api("items")
 
 
 @api.get("/")

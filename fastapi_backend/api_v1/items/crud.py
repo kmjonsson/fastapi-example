@@ -17,10 +17,10 @@ class CrudItem:
         self.db.refresh(db_item)
         return db_item
 
-    def get(self, item_id: int) -> DatabaseItem:
+    def get(self, item_id: int) -> DatabaseItem | None:
         return self.db.query(DatabaseItem).filter(DatabaseItem.id == item_id).first()
 
-    def update(self, id: int, new_item: CreateItem) -> DatabaseItem:
+    def update(self, id: int, new_item: CreateItem) -> DatabaseItem | None:
         item = self.get(id)
         if item:
             item.name = new_item.name
@@ -30,7 +30,7 @@ class CrudItem:
             self.db.refresh(item)
         return item
 
-    def delete(self, id: int) -> DatabaseItem:
+    def delete(self, id: int) -> DatabaseItem | None:
         item = self.get(id)
         if item:
             self.db.delete(item)
