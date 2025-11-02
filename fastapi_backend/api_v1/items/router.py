@@ -9,7 +9,7 @@ from fastapi_backend.api import create as create_api
 from fastapi_backend.database import db
 
 from .crud import CrudItem
-from .models import PostItem, Item
+from .models import Item, PostItem
 
 api = create_api("items")
 
