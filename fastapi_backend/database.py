@@ -1,8 +1,7 @@
-from sqlalchemy.orm import DeclarativeBase
-from sqlalchemy.orm import sessionmaker
-from sqlalchemy import create_engine
-
 import os
+
+from sqlalchemy import create_engine
+from sqlalchemy.orm import DeclarativeBase, sessionmaker
 
 # Replace with your actual Database credentials
 DATABASE_URL = os.environ.get("DATABASE_STRING", "sqlite:///local.db")

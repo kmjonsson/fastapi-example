@@ -1,5 +1,6 @@
 from sqlalchemy import Integer, String
 from sqlalchemy.orm import mapped_column
+
 from fastapi_backend.database import Base
 
 

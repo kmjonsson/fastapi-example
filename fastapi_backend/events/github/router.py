@@ -1,8 +1,8 @@
-from .models import GithubWebHook
-
 from fastapi import APIRouter
 
 from fastapi_backend.log import log
+
+from .models import GithubWebHook
 
 api = APIRouter(prefix="/events/github")
 

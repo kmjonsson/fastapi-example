@@ -1,4 +1,5 @@
-from fastapi import FastAPI, APIRouter
+from fastapi import APIRouter, FastAPI
+
 from .log import log
 
 # Uncomment the following line to disable automatic API documentation
