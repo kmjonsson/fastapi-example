@@ -13,7 +13,7 @@ init_api_v1(app)
 init_events(app)
 
 
-def init():
+def initialize_database():
     """Initialize database models."""
     log.info("Initializing database models...")
     init_models()

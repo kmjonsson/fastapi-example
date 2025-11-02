@@ -11,7 +11,7 @@ pip install -e .[dev]
 # Init Database
 
 ```
-python -c 'import fastapi_backend; fastapi_backend.init()'
+python -c 'import fastapi_backend; fastapi_backend.initialize_database()'
 ```
 
 # Run
