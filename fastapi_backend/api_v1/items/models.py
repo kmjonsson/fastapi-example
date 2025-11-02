@@ -4,7 +4,7 @@ Pydantic models for items API v1.
 
 from pydantic import BaseModel
 
-from fastapi_backend.models.item import DatabaseItem
+from fastapi_backend.models.item import Item as DatabaseItem
 
 
 class Item(BaseModel):

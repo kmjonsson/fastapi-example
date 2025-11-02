@@ -4,7 +4,7 @@ CRUD operations for Item model.
 
 from sqlalchemy.orm import Session
 
-from fastapi_backend.models.item import DatabaseItem
+from fastapi_backend.models.item import Item as DatabaseItem
 
 from .models import CreateItem
 
