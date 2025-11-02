@@ -1,7 +1,13 @@
+"""
+Models for GitHub webhook events.
+"""
+
 from pydantic import BaseModel, ConfigDict
 
 
 class GithubWebHookHook(BaseModel):
+    """Pydantic model representing the 'hook' part of a GitHub webhook event."""
+
     id: int
     events: list[str]
 
@@ -10,6 +16,8 @@ class GithubWebHookHook(BaseModel):
 
 
 class GithubWebHook(BaseModel):
+    """Pydantic model representing a GitHub webhook event."""
+
     hook_id: int
     hook: GithubWebHookHook
 

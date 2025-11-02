@@ -8,7 +8,13 @@ Basic fastapi example
 pip install -e .[dev]
 ```
 
+# Init Database
+
+```
+python -c 'import fastapi_backend; fastapi_backend.init()'
+```
+
 # Run
 ```
-uvicorn fastapi_backend.main:app --reload --host 192.168.2.22
+uvicorn fastapi_backend:app --reload --host 192.168.2.22
 ```

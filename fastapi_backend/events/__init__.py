@@ -1,5 +1,5 @@
-from .github import router as github
+from .github import api as github
 
 
 def init(app):
-    app.include_router(github.api)
+    app.include_router(github)

@@ -1,3 +1,7 @@
+"""
+Logging configuration for FastAPI backend.
+"""
+
 import logging
 
 logging.basicConfig(
