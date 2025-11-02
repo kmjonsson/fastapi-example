@@ -6,7 +6,7 @@ from sqlalchemy.orm import Session
 
 from fastapi_backend.models.item import Item as DatabaseItem
 
-from .models import CreateItem
+from .models import PostItem
 
 
 class CrudItem:
@@ -24,11 +24,11 @@ class CrudItem:
         """
         return self.db.query(DatabaseItem).all()
 
-    def create(self, item: CreateItem) -> DatabaseItem:
+    def create(self, item: PostItem) -> DatabaseItem:
         """Create a new item in the database.
 
         Args:
-            item (CreateItem): The item data to create.
+            item (PostItem): The item data to create.
 
         Returns:
             DatabaseItem: The created item.
@@ -50,12 +50,12 @@ class CrudItem:
         """
         return self.db.query(DatabaseItem).filter(DatabaseItem.id == item_id).first()
 
-    def update(self, id: int, new_item: CreateItem) -> DatabaseItem | None:
+    def update(self, id: int, new_item: PostItem) -> DatabaseItem | None:
         """Update an existing item by its ID.
 
         Args:
             id (int): The ID of the item to update.
-            new_item (CreateItem): The new item data.
+            new_item (PostItem): The new item data.
 
         Returns:
             DatabaseItem | None: The updated item if it existed, else None.

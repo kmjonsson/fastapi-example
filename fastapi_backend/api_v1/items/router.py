@@ -9,7 +9,7 @@ from fastapi_backend.api import create as create_api
 from fastapi_backend.database import db
 
 from .crud import CrudItem
-from .models import CreateItem, Item
+from .models import PostItem, Item
 
 api = create_api("items")
 
@@ -27,10 +27,10 @@ async def list_item_endpoint(db: Session = Depends(db)) -> list[Item]:
 
 
 @api.post("/")
-async def create_item_endpoint(item: CreateItem, db: Session = Depends(db)) -> Item:
+async def create_item_endpoint(item: PostItem, db: Session = Depends(db)) -> Item:
     """Create a new item.
     Args:
-        item (CreateItem): The item data to create.
+        item (PostItem): The item data to create.
         db (Session): Database session dependency.
 
     Returns:
@@ -57,12 +57,12 @@ async def get_item_endpoint(item_id: int, db: Session = Depends(db)) -> Item:
 
 @api.put("/{item_id}")
 async def update_item_endpoint(
-    item_id: int, new_item: CreateItem, db: Session = Depends(db)
+    item_id: int, new_item: PostItem, db: Session = Depends(db)
 ) -> Item:
     """Update an existing item by its ID.
     Args:
         item_id (int): The ID of the item to update.
-        new_item (CreateItem): The new item data.
+        new_item (PostItem): The new item data.
         db (Session): Database session dependency.
 
     Returns:

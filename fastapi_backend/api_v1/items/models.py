@@ -11,9 +11,13 @@ class Item(BaseModel):
     """Pydantic model representing an item."""
 
     id: int
+    """The unique identifier of the item."""
     name: str
+    """The name of the item."""
     description: str
+    """The description of the item."""
     price: int
+    """The price of the item."""
 
     @staticmethod
     def from_orm(db_item: DatabaseItem) -> "Item":
@@ -33,9 +37,12 @@ class Item(BaseModel):
         )
 
 
-class CreateItem(BaseModel):
-    """Pydantic model for creating a new item."""
+class PostItem(BaseModel):
+    """Pydantic model for creating or updating an item."""
 
     name: str
+    """The name of the item."""
     description: str
+    """The description of the item."""
     price: int
+    """The price of the item."""

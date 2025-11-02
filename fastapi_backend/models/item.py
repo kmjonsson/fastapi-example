@@ -11,6 +11,10 @@ class Item(Base):
 
     __tablename__ = "items"
     id = mapped_column(Integer, primary_key=True, index=True)
+    """The unique identifier of the item."""
     name = mapped_column(String(255), index=True)
+    """The name of the item."""
     description = mapped_column(String(255), index=True)
+    """The description of the item."""
     price = mapped_column(Integer)
+    """The price of the item."""

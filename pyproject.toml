@@ -25,6 +25,7 @@ dev = [
   "httpx",
   "mock",
   "mypy",
+  "pdoc",
 ]
 
 [tool.pytest.ini_options]
